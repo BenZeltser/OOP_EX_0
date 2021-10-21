@@ -8,13 +8,35 @@ public class ElevatorCall implements CallForElevator, ElevatorAlgo, Elevator, Bu
     public int callType;
     public int src;
     public int dest;
-    //An elevator call constructor. gets 3 arguments: call type, source and destination of the call
+    public int state;
+    public int type;
+    public int allocatedTo;
+
+    public void setSrc(int src) {
+        this.src = src;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public int getAllocatedTo() {
+        return allocatedTo;
+    }
+
+    public void setAllocatedTo(int allocatedTo) {
+        this.allocatedTo = allocatedTo;
+    }
+//An elevator call constructor. gets 3 arguments: call type, source and destination of the call
 
     public ElevatorCall(int callType, int SRC, int DEST) {
         this.callType = callType;
         this.src = src;
         this.dest = DEST;
-        //DISPATCHER(GETCALL)
 
     }
 

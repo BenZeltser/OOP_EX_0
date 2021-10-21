@@ -25,13 +25,16 @@ public class Dispatcher implements ElevatorAlgo, CallForElevator, Building, Elev
         int src = currentCall.getSrc();
         int dst = currentCall.getDest();
 
-        //use Iterator to find who is the closeEst
         ElevatorUnit min = ElevatorSystem.ElevatorList.get(0);
         //*******GET DISTANCE FUNCTION NEEDED************
         for (int i = 0; i < ElevatorSystem.ElevatorList.size(); i++) {
             ElevatorUnit curr = ElevatorSystem.ElevatorList.get(i);
             /**if Distance(curr,dest)<Distance(curr,dest)
              *      min = curr
+             *
+             *      when the min found, check if it's available or on the way
+             *
+             *      if both conditions are met --> Send the Elevator to the caller
              *
              *     this will find the best elevator (min)
              */
