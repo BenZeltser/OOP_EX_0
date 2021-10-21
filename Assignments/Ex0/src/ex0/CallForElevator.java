@@ -14,10 +14,11 @@ public interface CallForElevator {
     public double getTime(int state);
     /** @return the source floor of this elevator call was init at. */
     public int getSrc();
-    /** @return the destenation floor to which this elevator call is targeted to. */
+    /** @return the destination floor to which this elevator call is targeted to. */
     public int getDest();
     /** @return the type of this call {UP,DOWN}; */
     public int getType();
     /** This methods return the index of the Elevator in the building to which this call was assigned to, if not yet Assigned --> return -1 */
-    public int allocatedTo() ;
+    public int allocatedTo();
+
 }
