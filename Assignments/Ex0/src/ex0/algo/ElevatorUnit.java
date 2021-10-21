@@ -7,11 +7,32 @@ import ex0.Elevator;
 public class ElevatorUnit implements Elevator, Building, CallForElevator {
 
     String name;
-
+    Building _building;
     //ElevatorCar
     //Doors
     //
-
+    private double dist(int src, int elev) {
+        double ans = -1;
+        Elevator thisElev = this._building.getElevetor(elev);
+        int pos = thisElev.getPos();
+        double speed = thisElev.getSpeed();
+        int min = this._building.minFloor(), max = this._building.maxFloor();
+        double up2down = (max - min) * speed;
+        if (elev % 2 == 1) { // up
+            if (pos <= src) {
+                ans = (src - pos);
+            } else {
+                ans = ((max - pos) + (pos - min)) + up2down;
+            }
+        } else {
+            if (pos >= src) {
+                ans = (pos - src);
+            } else {
+                ans = ((max - pos) + (pos - min));
+            }
+        }
+        return ans;
+    }
     @Override
     public String getBuildingName() {
         return null;

@@ -30,11 +30,10 @@ public class Dispatcher implements ElevatorAlgo, CallForElevator, Building, Elev
         //*******GET DISTANCE FUNCTION NEEDED************
         for (int i = 0; i < ElevatorSystem.ElevatorList.size(); i++) {
             ElevatorUnit curr = ElevatorSystem.ElevatorList.get(i);
-            /**IF CURRENT.GETDISTANCE<PREV.GETDISTANCE
-             *     temp = curr
+            /**if Distance(curr,dest)<Distance(curr,dest)
+             *      min = curr
              *
-             *     this will find the min elevator while min being
-             *     min distance.
+             *     this will find the best elevator (min)
              */
         }
     }
