@@ -3,12 +3,10 @@ package ex0.algo;
 import ex0.Building;
 import ex0.CallForElevator;
 import ex0.Elevator;
-import ex0.ElevatorSystem;
 
 public class Dispatcher implements ElevatorAlgo, CallForElevator, Building, Elevator {
     final ElevatorAlgo algo;
     public CallForElevator currentCall;
-    ElevatorSystem ElevatorSystem;
 
     public Dispatcher(ElevatorAlgo algo, CallForElevator currentCall) {
 
@@ -25,11 +23,8 @@ public class Dispatcher implements ElevatorAlgo, CallForElevator, Building, Elev
         int src = currentCall.getSrc();
         int dst = currentCall.getDest();
 
-        ElevatorUnit min = ElevatorSystem.ElevatorList.get(0);
-        //*******GET DISTANCE FUNCTION NEEDED************
-        for (int i = 0; i < ElevatorSystem.ElevatorList.size(); i++) {
-            ElevatorUnit curr = ElevatorSystem.ElevatorList.get(i);
-            /**if Distance(curr,dest)<Distance(curr,dest)
+
+            /**if Time(curr,dest)<Time(curr,dest)
              *      min = curr
              *
              *      when the min found, check if it's available or on the way
@@ -39,7 +34,6 @@ public class Dispatcher implements ElevatorAlgo, CallForElevator, Building, Elev
              *     this will find the best elevator (min)
              */
         }
-    }
 
 
     @Override

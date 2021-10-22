@@ -60,7 +60,8 @@ public class ElevatorAlgoAns implements ElevatorAlgo, Elevator, CallForElevator 
         }
         return ans;
     }
-
+};
+/**
     @Override
     public double getTime(int state) {
         return 0;
