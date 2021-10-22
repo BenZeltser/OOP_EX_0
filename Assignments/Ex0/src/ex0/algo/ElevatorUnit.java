@@ -1,86 +1,61 @@
 package ex0.algo;
 
-import ex0.Building;
-import ex0.CallForElevator;
 import ex0.Elevator;
 
-public class ElevatorUnit implements Elevator, Building, CallForElevator {
+public class ElevatorUnit implements Elevator {
 
-    String name;
-    Building _building;
-    //ElevatorCar
-    //Doors
-    //
-    private double dist(int src, int elev) {
-        double ans = -1;
-        Elevator thisElev = this._building.getElevetor(elev);
-        int pos = thisElev.getPos();
-        double speed = thisElev.getSpeed();
-        int min = this._building.minFloor(), max = this._building.maxFloor();
-        double up2down = (max - min) * speed;
-        if (elev % 2 == 1) { // up
-            if (pos <= src) {
-                ans = (src - pos);
-            } else {
-                ans = ((max - pos) + (pos - min)) + up2down;
-            }
-        } else {
-            if (pos >= src) {
-                ans = (pos - src);
-            } else {
-                ans = ((max - pos) + (pos - min));
-            }
-        }
-        return ans;
-    }
-    @Override
-    public String getBuildingName() {
-        return null;
+    private long ID;
+    private int MinFloor;
+    private int MaxFloor;
+    private double TimeForOpen;
+    private double TimeForClose;
+    private int state;
+    private int Pos;
+    private int Speed;
+    private int StartTime;
+    private int StopTime;
+    private Doors doors;
+
+
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
-    @Override
-    public int minFloor() {
-        return 0;
+    public void setMinFloor(int minFloor) {
+        MinFloor = minFloor;
     }
 
-    @Override
-    public int maxFloor() {
-        return 0;
+    public void setMaxFloor(int maxFloor) {
+        MaxFloor = maxFloor;
     }
 
-    @Override
-    public int numberOfElevetors() {
-        return 0;
+    public void setTimeForOpen(double timeForOpen) {
+        TimeForOpen = timeForOpen;
     }
 
-    @Override
-    public Elevator getElevetor(int i) {
-        return null;
+    public void setTimeForClose(double timeForClose) {
+        TimeForClose = timeForClose;
     }
 
-    @Override
-    public double getTime(int state) {
-        return 0;
+    public void setState(int state) {
+        this.state = state;
     }
 
-    @Override
-    public int getSrc() {
-        return 0;
+    public void setPos(int pos) {
+        Pos = pos;
     }
 
-    @Override
-    public int getDest() {
-        return 0;
+    public void setSpeed(int speed) {
+        Speed = speed;
     }
 
-    @Override
-    public int getType() {
-        return 0;
+    public void setStartTime(int startTime) {
+        StartTime = startTime;
     }
 
-    @Override
-    public int allocatedTo() {
-        return 0;
+    public void setStopTime(int stopTime) {
+        StopTime = stopTime;
     }
 
     @Override
@@ -143,3 +118,4 @@ public class ElevatorUnit implements Elevator, Building, CallForElevator {
         return 0;
     }
 }
+

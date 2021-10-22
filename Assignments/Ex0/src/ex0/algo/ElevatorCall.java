@@ -6,14 +6,14 @@ import ex0.Elevator;
 
 public class ElevatorCall implements CallForElevator, ElevatorAlgo, Elevator, Building {
     public int callType;
-    public int src;
-    public int dest;
+    public int Src;
+    public int Dest;
     public int state;
-    public int type;
+    public int Type;
     public int allocatedTo;
 
     public void setSrc(int src) {
-        this.src = src;
+        this.Src = src;
     }
 
     public void setState(int state) {
@@ -21,7 +21,7 @@ public class ElevatorCall implements CallForElevator, ElevatorAlgo, Elevator, Bu
     }
 
     public void setType(int type) {
-        this.type = type;
+        this.Type = type;
     }
 
     public int getAllocatedTo() {
@@ -35,8 +35,8 @@ public class ElevatorCall implements CallForElevator, ElevatorAlgo, Elevator, Bu
 
     public ElevatorCall(int callType, int SRC, int DEST) {
         this.callType = callType;
-        this.src = src;
-        this.dest = DEST;
+        this.Src = Src;
+        this.Dest = DEST;
 
     }
 
@@ -49,19 +49,19 @@ public class ElevatorCall implements CallForElevator, ElevatorAlgo, Elevator, Bu
     }
 
     public int getsrc() {
-        return src;
+        return Src;
     }
 
     public void setsrc(int SRC) {
-        this.src = src;
+        this.Src = Src;
     }
 
     public int getDest() {
-        return dest;
+        return Dest;
     }
 
     public void setDest(int dest) {
-        this.dest = dest;
+        this.Dest = dest;
     }
 
     @Override
