@@ -12,6 +12,11 @@ public class ElevatorCall implements CallForElevator, ElevatorAlgo, Elevator, Bu
     public int Type;
     public int allocatedTo;
 
+    public ElevatorCall( int src, int dest) {
+        Src = src;
+        Dest = dest;
+    }
+
     public void setSrc(int src) {
         this.Src = src;
     }

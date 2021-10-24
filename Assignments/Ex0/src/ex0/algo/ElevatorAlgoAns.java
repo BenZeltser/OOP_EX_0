@@ -7,7 +7,7 @@ import java.util.*;
 
 import java.util.Iterator;
 
-public abstract class ElevatorAlgoAns implements ElevatorAlgo, Elevator, CallForElevator {
+public class ElevatorAlgoAns implements ElevatorAlgo, Elevator, CallForElevator {
     public static final int UP = 1, DOWN = -1, LEVEL = 0;
     private int _direction = UP;
     private Building _building;
@@ -61,6 +61,93 @@ public abstract class ElevatorAlgoAns implements ElevatorAlgo, Elevator, CallFor
                 ans=(pos-src)*speed;
         }
         return ans;
+    }
+
+
+
+    @Override
+    public double getTime(int state) {
+        return 0;
+    }
+
+    @Override
+    public int getSrc() {
+        return 0;
+    }
+
+    @Override
+    public int getDest() {
+        return 0;
+    }
+
+    @Override
+    public int getType() {
+        return 0;
+    }
+
+    @Override
+    public int allocatedTo() {
+        return 0;
+    }
+
+    @Override
+    public int getMinFloor() {
+        return 0;
+    }
+
+    @Override
+    public int getMaxFloor() {
+        return 0;
+    }
+
+    @Override
+    public double getTimeForOpen() {
+        return 0;
+    }
+
+    @Override
+    public double getTimeForClose() {
+        return 0;
+    }
+
+    @Override
+    public int getState() {
+        return 0;
+    }
+
+    @Override
+    public int getPos() {
+        return 0;
+    }
+
+    @Override
+    public boolean goTo(int floor) {
+        return false;
+    }
+
+    @Override
+    public boolean stop(int floor) {
+        return false;
+    }
+
+    @Override
+    public double getSpeed() {
+        return 0;
+    }
+
+    @Override
+    public double getStartTime() {
+        return 0;
+    }
+
+    @Override
+    public double getStopTime() {
+        return 0;
+    }
+
+    @Override
+    public int getID() {
+        return 0;
     }
 };
 /**
