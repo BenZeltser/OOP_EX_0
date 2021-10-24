@@ -4,7 +4,8 @@ import ex0.Building;
 import ex0.CallForElevator;
 import ex0.Elevator;
 
-public class Dispatcher implements ElevatorAlgo, CallForElevator, Building, Elevator {
+public class
+Dispatcher implements ElevatorAlgo, CallForElevator, Building, Elevator {
     final ElevatorAlgo algo;
     public CallForElevator currentCall;
 
