@@ -2,17 +2,19 @@ package ex0.algo;
 import ex0.Building;
 import ex0.CallForElevator;
 import ex0.Elevator;
+import java.io.*;
+import java.util.*;
 
 import java.util.Iterator;
 
-public class ElevatorAlgoAns implements ElevatorAlgo, Elevator, CallForElevator {
+public abstract class ElevatorAlgoAns implements ElevatorAlgo, Elevator, CallForElevator {
     public static final int UP = 1, DOWN = -1, LEVEL = 0;
     private int _direction = UP;
     private Building _building;
+    private ArrayList<CallForElevator> callForElevatorList=new ArrayList<>();
 
     public ElevatorAlgoAns(Building b) {
         _building = b;
-        _direction = UP;
     }
 
     @Override
@@ -33,6 +35,16 @@ public class ElevatorAlgoAns implements ElevatorAlgo, Elevator, CallForElevator 
     @Override
     public void cmdElevator(int elev) {
 
+    }
+    //this function adds a new elevator call to the elevatorcall list
+    private void addCall(CallForElevator c)
+    {
+        callForElevatorList.add(c);
+    }
+
+    private boolean isBetween(int floorCall, int src, int des)
+    {
+        return true;
     }
 
     //this function calculates the time a resting elevator will take to reach the source of the call
