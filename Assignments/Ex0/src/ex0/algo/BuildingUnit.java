@@ -5,65 +5,77 @@ import ex0.Elevator;
 import java.util.ArrayList;
 
 public class BuildingUnit implements Building {
+    private String name;
     private int minFloor;
     private int maxFloor;
     private int numberOfElevetors;
     private ArrayList<ElevatorUnit> Elevators;
 
-    public int getMinFloor() {
-        return minFloor;
+    private BuildingUnit(int minFloor, int maxFloor, int numberOfElevetors) {
+        this.minFloor = minFloor;
+        this.maxFloor = maxFloor;
+        this.name = name;
+        this.numberOfElevetors = 0;
+        Elevators = new ArrayList<ElevatorUnit>();
+        int count = 0;
+        while(count > numberOfElevetors) {
+            ElevatorUnit newElev = new ElevatorUnit();
+            newElev.setID(count);
+            Elevators.add(newElev);
+            count++;
+        }
+
     }
 
-    public void setMinFloor(int minFloor) {
+    private void setMinFloor(int minFloor) {
         this.minFloor = minFloor;
     }
 
-    public int getMaxFloor() {
-        return maxFloor;
-    }
-
-    public void setMaxFloor(int maxFloor) {
+    private void setMaxFloor(int maxFloor) {
         this.maxFloor = maxFloor;
     }
 
-    public int getNumberOfElevetors() {
+    private int getNumberOfElevetors() {
         return numberOfElevetors;
     }
 
-    public void setNumberOfElevetors(int numberOfElevetors) {
+    private void setNumberOfElevetors(int numberOfElevetors) {
         this.numberOfElevetors = numberOfElevetors;
     }
 
-    public ArrayList<ElevatorUnit> getElevators() {
+    private ArrayList<ElevatorUnit> getElevators() {
         return Elevators;
     }
 
-    public void setElevators(ArrayList<ElevatorUnit> elevators) {
+    private void setElevators(ArrayList<ElevatorUnit> elevators) {
         Elevators = elevators;
     }
 
     @Override
     public String getBuildingName() {
-        return null;
+        String name = this.name;
+        return name;
     }
 
     @Override
     public int minFloor() {
-        return 0;
+        return minFloor;
     }
 
     @Override
     public int maxFloor() {
-        return 0;
+        return maxFloor;
     }
 
     @Override
     public int numberOfElevetors() {
-        return 0;
+        return numberOfElevetors;
     }
 
     @Override
     public Elevator getElevetor(int i) {
-        return null;
+        if (i < 0 || i >= Elevators.size())
+            return null;
+        return Elevators.get(i);
     }
 }

@@ -1,24 +1,26 @@
 package ex0.algo;
 
-import ex0.Building;
 import ex0.CallForElevator;
-import ex0.Elevator;
+import org.jetbrains.annotations.NotNull;
 
-public class ElevatorCall implements CallForElevator, ElevatorAlgo, Elevator, Building {
-    public int callType;
-    public int Src;
-    public int Dest;
-    public int state;
-    public int Type;
-    public int allocatedTo;
+public class ElevatorCall implements CallForElevator, Comparable<ElevatorCall> {
+    private int callType;
+    private int Src;
+    private int Dest;
+    private int state;
+    private int Type;
+    private int allocatedTo;
 
-    public ElevatorCall( int src, int dest) {
-        Src = src;
-        Dest = dest;
+    public void setCallType(int callType) {
+        this.callType = callType;
     }
 
     public void setSrc(int src) {
-        this.Src = src;
+        Src = src;
+    }
+
+    public void setDest(int dest) {
+        Dest = dest;
     }
 
     public void setState(int state) {
@@ -26,11 +28,12 @@ public class ElevatorCall implements CallForElevator, ElevatorAlgo, Elevator, Bu
     }
 
     public void setType(int type) {
-        this.Type = type;
+        Type = type;
     }
 
-    public int getAllocatedTo() {
-        return allocatedTo;
+    public ElevatorCall(int src, int dest) {
+        Src = src;
+        Dest = dest;
     }
 
     public void setAllocatedTo(int allocatedTo) {
@@ -45,87 +48,8 @@ public class ElevatorCall implements CallForElevator, ElevatorAlgo, Elevator, Bu
 
     }
 
-    public int getCallType() {
-        return callType;
-    }
-
-    public void setCallType(int callType) {
-        this.callType = callType;
-    }
-
-    public int getsrc() {
-        return Src;
-    }
-
-    public void setsrc(int SRC) {
-        this.Src = Src;
-    }
-
-    public int getDest() {
-        return Dest;
-    }
-
-    public void setDest(int dest) {
-        this.Dest = dest;
-    }
-
-    @Override
-    public int getMinFloor() {
-        return 0;
-    }
-
-    @Override
-    public int getMaxFloor() {
-        return 0;
-    }
-
-    @Override
-    public double getTimeForOpen() {
-        return 0;
-    }
-
-    @Override
-    public double getTimeForClose() {
-        return 0;
-    }
-
     @Override
     public int getState() {
-        return 0;
-    }
-
-    @Override
-    public int getPos() {
-        return 0;
-    }
-
-    @Override
-    public boolean goTo(int floor) {
-        return false;
-    }
-
-    @Override
-    public boolean stop(int floor) {
-        return false;
-    }
-
-    @Override
-    public double getSpeed() {
-        return 0;
-    }
-
-    @Override
-    public double getStartTime() {
-        return 0;
-    }
-
-    @Override
-    public double getStopTime() {
-        return 0;
-    }
-
-    @Override
-    public int getID() {
         return 0;
     }
 
@@ -140,6 +64,11 @@ public class ElevatorCall implements CallForElevator, ElevatorAlgo, Elevator, Bu
     }
 
     @Override
+    public int getDest() {
+        return 0;
+    }
+
+    @Override
     public int getType() {
         return 0;
     }
@@ -150,47 +79,7 @@ public class ElevatorCall implements CallForElevator, ElevatorAlgo, Elevator, Bu
     }
 
     @Override
-    public Building getBuilding() {
-        return null;
-    }
-
-    @Override
-    public String algoName() {
-        return null;
-    }
-
-    @Override
-    public int allocateAnElevator(CallForElevator c) {
+    public int compareTo(@NotNull ElevatorCall o) {
         return 0;
-    }
-
-    @Override
-    public void cmdElevator(int elev) {
-
-    }
-
-    @Override
-    public String getBuildingName() {
-        return null;
-    }
-
-    @Override
-    public int minFloor() {
-        return 0;
-    }
-
-    @Override
-    public int maxFloor() {
-        return 0;
-    }
-
-    @Override
-    public int numberOfElevetors() {
-        return 0;
-    }
-
-    @Override
-    public Elevator getElevetor(int i) {
-        return null;
     }
 }

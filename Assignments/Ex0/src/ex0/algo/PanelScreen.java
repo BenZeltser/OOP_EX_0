@@ -6,7 +6,7 @@ public class PanelScreen {
 
     }
 
-    public void print(int input) {
+    public void print(String input) {
         System.out.println(input);
     }
 

@@ -1,41 +1,44 @@
 package ex0.algo;
 
-public class Doors {
+import ex0.Elevator;
+
+
+public class Doors implements Elevator {
     private static int status;
     private boolean sensorOn = false;
 
-    public static int getStatus() {
+    private static int getStatus() {
         return status;
     }
 
-    public static void setStatus(int status) {
+    private static void setStatus(int status) {
         Doors.status = status;
     }
 
-    public boolean isSensorOn() {
+    private boolean isSensorOn() {
         return sensorOn;
     }
 
-    public void setSensorOn(boolean sensorOn) {
+    private void setSensorOn(boolean sensorOn) {
         this.sensorOn = sensorOn;
     }
 
-    public Doors() {
+    private Doors() {
     this.status=status;
     }
 
-    public void open() {
+    private void open() {
         status=1;
     }
 
-    public boolean isClosed() {
+    private boolean isClosed() {
         if (status==1) return false;
         else if (status==-1) return false;
         else if (status==0) return true;
         else return false;
     }
 
-    public void close(){
+    private void close(){
         if (sensorOn==false)
             status=0;
         else
@@ -43,4 +46,63 @@ public class Doors {
             return;
     }
 
+    @Override
+    public int getMinFloor() {
+        return 0;
+    }
+
+    @Override
+    public int getMaxFloor() {
+        return 0;
+    }
+
+    @Override
+    public double getTimeForOpen() {
+        return 0;
+    }
+
+    @Override
+    public double getTimeForClose() {
+        return 0;
+    }
+
+    @Override
+    public int getState() {
+        return 0;
+    }
+
+    @Override
+    public int getPos() {
+        return 0;
+    }
+
+    @Override
+    public boolean goTo(int floor) {
+        return false;
+    }
+
+    @Override
+    public boolean stop(int floor) {
+        return false;
+    }
+
+    @Override
+    public double getSpeed() {
+        return 0;
+    }
+
+    @Override
+    public double getStartTime() {
+        return 0;
+    }
+
+    @Override
+    public double getStopTime() {
+        return 0;
+    }
+
+    @Override
+    public int getID() {
+        return 0;
+    }
 }

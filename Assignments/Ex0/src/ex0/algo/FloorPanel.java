@@ -1,8 +1,8 @@
 package ex0.algo;
-
 import ex0.Building;
 import ex0.CallForElevator;
 import ex0.Elevator;
+import java.util.Scanner;
 
 public class FloorPanel implements Building, ElevatorAlgo, CallForElevator {
     private int input;
@@ -13,6 +13,11 @@ public class FloorPanel implements Building, ElevatorAlgo, CallForElevator {
         this.input = input;
         this.screen = screen;
         this.floor=floor;
+        while (true) {
+        Scanner in = new Scanner(System.in);
+        screen.print("Enter a floor");
+        this.input = in.nextInt();
+        setInput(input);}
     }
 
     public int getFloor() {
@@ -28,16 +33,16 @@ public class FloorPanel implements Building, ElevatorAlgo, CallForElevator {
     }
 
     public void setInput(int input) {
-        if (input > maxFloor() || input < minFloor()) {
+        if (input > maxFloor() || input < minFloor() || input==floor) {
             screen.printError();
             return;}
         else {
             this.input = input;
-            screen.print(input);
+            screen.print((String.valueOf(input)));
             ElevatorCall call = new ElevatorCall(floor,input);
-            allocateAnElevator(call);
+            allocateAnElevator(call);}
 
-    }}
+    }
 
     @Override
     public String getBuildingName() {

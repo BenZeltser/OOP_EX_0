@@ -13,7 +13,8 @@ public interface ElevatorAlgo {
      */
     public Building getBuilding();
     /**
-     * @return he algorithm name - can be any String.
+     * @return he algo3
+     * rithm name - can be any String.
      */
     public String algoName();
     /**

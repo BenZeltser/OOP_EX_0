@@ -1,6 +1,11 @@
 package ex0.algo;
 
+import ex0.CallForElevator;
 import ex0.Elevator;
+
+
+import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 public class ElevatorUnit implements Elevator {
 
@@ -12,10 +17,40 @@ public class ElevatorUnit implements Elevator {
     private int state;
     private int Pos;
     private int Speed;
+
+    public void setID(long ID) {
+        this.ID = ID;
+    }
+
+    public Doors getDoors() {
+        return doors;
+    }
+
+    public void setDoors(Doors doors) {
+        this.doors = doors;
+    }
+
+    public ArrayList<Integer>[] getUpcalls() {
+        return upcalls;
+    }
+
+    public void setUpcalls(ArrayList<Integer>[] upcalls) {
+        this.upcalls = upcalls;
+    }
+
+    public ArrayList<Integer>[] getDowncalls() {
+        return downcalls;
+    }
+
+    public void setDowncalls(ArrayList<Integer>[] downcalls) {
+        this.downcalls = downcalls;
+    }
+
     private int StartTime;
     private int StopTime;
     private Doors doors;
-
+    private ArrayList<Integer>[] upcalls;
+    private ArrayList<Integer>[] downcalls;
 
 
     public void setID(int ID) {
@@ -60,12 +95,12 @@ public class ElevatorUnit implements Elevator {
 
     @Override
     public int getMinFloor() {
-        return 0;
+        return MinFloor;
     }
 
     @Override
     public int getMaxFloor() {
-        return 0;
+        return MaxFloor;
     }
 
     @Override
