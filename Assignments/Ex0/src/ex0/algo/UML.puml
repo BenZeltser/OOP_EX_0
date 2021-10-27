@@ -1,0 +1,61 @@
+@startuml
+
+interface Building {
+    public String getBuildingName();
+    public int minFloor();
+    public int maxFloor();
+    public int numberOfElevetors();
+    public Elevator getElevetor(int i);
+
+}[
+
+
+
+interface CallForElevator {
+     int getState();
+     double getTime(int state);
+     int getSrc();
+     int getDest();
+     int getType();
+     int allocatedTo();
+
+}
+
+
+interface Elevator {
+int getMinFloor();
+int getMaxFloor();
+double getTimeForOpen();
+double getTimeForClose();
+int getState();
+int getPos();
+boolean goTo(int floor);
+boolean stop(int floor);
+double getSpeed();
+double getStartTime();
+double getStopTime();
+public int getID();
+}
+
+
+interface ElevatorAlgo {
+void cmdElevator(int elev);
+public int allocateAnElevator(CallForElevator c);
+public String algoName();
+public Building getBuilding();
+
+}
+
+
+
+
+class BuildingUnit implements Building
+class Doors implements Elevator
+class ElevatorAlgoAns implements ElevatorAlgo, Elevator, CallForElevator
+class ElevatorCall implements CallForElevator
+class ElevatorUnit implements Elevator
+class FloorPanel implements Building, ElevatorAlgo, CallForElevator
+class PanelScreen {
+ void print()
+ }
+@enduml
