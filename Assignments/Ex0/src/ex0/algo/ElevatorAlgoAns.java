@@ -9,9 +9,9 @@ import java.util.*;
 
 import java.util.Iterator;
 
-public class ElevatorAlgoAns implements ElevatorAlgo,CallForElevator,Elevator {
-    public static final int UP = 1, DOWN = -1, LEVEL = 0;
-
+public class ElevatorAlgoAns implements ElevatorAlgo {
+    public static final int UP = 1, DOWN = -1, LEVEL = 0,ERROR=2;
+    public static final int GOING2SRC=1, GOING2DST=2, DONE=3;
     private int _direction = UP;
     private Building _building;
     private ArrayList<CallForElevator> callForElevatorList=new ArrayList<>();
@@ -215,89 +215,5 @@ public class ElevatorAlgoAns implements ElevatorAlgo,CallForElevator,Elevator {
             ans = (pos - src) * speed + stopTime;
         }
         return ans;
-    }
-   @Override
-    public double getTime(int state) {
-        return 0;
-    }
-
-    @Override
-    public int getSrc() {
-        return 0;
-    }
-
-    @Override
-    public int getDest() {
-        return 0;
-    }
-
-    @Override
-    public int getType() {
-        return 0;
-    }
-
-    @Override
-    public int allocatedTo() {
-        return 0;
-    }
-
-    @Override
-    public int getMinFloor() {
-        return 0;
-    }
-
-    @Override
-    public int getMaxFloor() {
-        return 0;
-    }
-
-    @Override
-    public double getTimeForOpen() {
-        return 0;
-    }
-
-    @Override
-    public double getTimeForClose() {
-        return 0;
-    }
-
-    @Override
-    public int getState() {
-        return 0;
-    }
-
-    @Override
-    public int getPos() {
-        return 0;
-    }
-
-    @Override
-    public boolean goTo(int floor) {
-        return false;
-    }
-
-    @Override
-    public boolean stop(int floor) {
-        return false;
-    }
-
-    @Override
-    public double getSpeed() {
-        return 0;
-    }
-
-    @Override
-    public double getStartTime() {
-        return 0;
-    }
-
-    @Override
-    public double getStopTime() {
-        return 0;
-    }
-
-    @Override
-    public int getID() {
-        return 0;
     }
 }
