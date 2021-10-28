@@ -7,18 +7,17 @@ interface Building {
     public int numberOfElevetors();
     public Elevator getElevetor(int i);
 
-}[
+}
 
 
 
 interface CallForElevator {
-     int getState();
-     double getTime(int state);
-     int getSrc();
-     int getDest();
-     int getType();
-     int allocatedTo();
-
+         int getState();
+         double getTime(int state);
+         int getSrc();
+         int getDest();
+         int getType();
+         int allocatedTo();
 }
 
 
